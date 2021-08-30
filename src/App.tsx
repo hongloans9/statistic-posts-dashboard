@@ -1,56 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import React, { Suspense } from 'react';
+import { BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 import './App.css';
+import login from './features/login';
+
+const Dashboard = React.lazy(() => import('./features/dashboard'))
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <Suspense fallback={<p>Loading ...</p>}>
+        <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={login} />
+          <Route path="/statistics" component={Dashboard} />
+          <Redirect from="*" to={"/"} />
+        </Switch>
+        </BrowserRouter>
+      </Suspense>
     </div>
   );
 }
