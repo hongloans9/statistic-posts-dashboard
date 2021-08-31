@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { Spinner } from 'react-bootstrap';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Header from './components/Header';
 import dashboard from './features/dashboard';
 import login from './features/login';
 import usersPosts from './features/usersPosts';
@@ -12,6 +13,8 @@ function App() {
     <div className="App">
       <Suspense fallback={<Spinner animation="border" variant="success" />}>
         <BrowserRouter>
+          <Header />
+
           <Switch>
             <Route exact path="/" component={login} />
             <Route path="/statistics" component={dashboard} />

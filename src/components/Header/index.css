@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+}
+.nav-link {
+  color: darkcyan;
+  font-weight: 500;
+}
+.nav-link:hover {
+  color: darkcyan;
+  text-decoration: underline;
+}

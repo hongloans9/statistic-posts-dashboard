@@ -4,7 +4,6 @@ import { selectPosts } from "../../features/dashboard/postsSlice";
 import { PostsByWeek } from "../../features/dashboard/utils/postsByWeek";
 import "./index.css";
 
-
 const TableWeekData = () => {
     const posts = useSelector(selectPosts)
     return (
@@ -16,10 +15,11 @@ const TableWeekData = () => {
                 </tr>
             </thead>
             <tbody>
-                {PostsByWeek(posts).map(item => <tr key={item.week}>
-                    <td>{item.week}</td>
-                    <td>{item.totalPosts}</td>
-                </tr>)}
+                {PostsByWeek(posts).map(item =>
+                    <tr key={item.week}>
+                        <td>{item.week}</td>
+                        <td>{item.totalPosts}</td>
+                    </tr>)}
             </tbody>
         </Table>
     )
