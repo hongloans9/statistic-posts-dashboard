@@ -1,0 +1,14 @@
+.sort-icon {
+  text-align: left;
+  margin: 15px 0;
+}
+.sort-icon svg {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.sort-icon .active svg,
+.sort-icon span:hover svg {
+  color: darkcyan;
+}

@@ -1,0 +1,14 @@
+.post-card {
+  border: 1px solid lightgray;
+  margin-bottom: 10px;
+  text-align: left;
+  box-shadow: 0 0 2px 0 rgb(0 0 0 / 12%), 0 2px 4px 0 rgb(0 0 0 / 22%);
+}
+.post-time {
+  border-bottom: 1px solid lightgray;
+  padding: 5px 20px;
+  font-weight: 500;
+}
+.post-message {
+  padding: 10px 20px;
+}

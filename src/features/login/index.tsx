@@ -1,5 +1,7 @@
+import { Button, Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { getToken } from "./loginAPI";
+import "./login.css";
 
 const Login = () => {
   let history = useHistory();
@@ -13,13 +15,11 @@ const Login = () => {
   }
 
   return (
-    <div className="container">
-      <div className="login-wrapper">
-        <button className="login-button" onClick={register}>
+    <Container>
+        <Button className="login-button" variant="success" onClick={register}>
           Go to dashboard
-        </button>
-      </div>
-    </div>
+        </Button>
+    </Container>
   )
 }
 

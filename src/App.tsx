@@ -1,20 +1,23 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
+import { Spinner } from 'react-bootstrap';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
+import dashboard from './features/dashboard';
 import login from './features/login';
+import usersPosts from './features/usersPosts';
 
-const Dashboard = React.lazy(() => import('./features/dashboard'))
 
 function App() {
   return (
     <div className="App">
-      <Suspense fallback={<p>Loading ...</p>}>
+      <Suspense fallback={<Spinner animation="border" variant="success" />}>
         <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={login} />
-          <Route path="/statistics" component={Dashboard} />
-          <Redirect from="*" to={"/"} />
-        </Switch>
+          <Switch>
+            <Route exact path="/" component={login} />
+            <Route path="/statistics" component={dashboard} />
+            <Route path="/posts" component={usersPosts} />
+            <Redirect from="*" to={"/"} />
+          </Switch>
         </BrowserRouter>
       </Suspense>
     </div>

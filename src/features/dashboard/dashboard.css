@@ -1,0 +1,27 @@
+.sidebar-wrap {
+  max-width: fit-content;
+  margin: auto;
+  text-align: left;
+  padding: 10px;
+}
+h1 {
+  margin: 20px 0;
+}
+h4 {
+  font-size: 20px;
+}
+.overview {
+  cursor: pointer;
+}
+.month-wrap {
+  padding-left: 15px;
+}
+.nav-item {
+  font-weight: 400;
+  cursor: pointer;
+}
+.nav-item:hover,
+.nav-item.selected {
+  color: darkcyan;
+  font-weight: 500;
+}
