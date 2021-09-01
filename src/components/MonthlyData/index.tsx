@@ -1,3 +1,4 @@
+import moment from "moment";
 import { FunctionComponent } from "react";
 import { Accordion, ListGroup } from "react-bootstrap";
 import { Post } from "../../features/dashboard/postsSlice";
@@ -15,26 +16,26 @@ interface Props {
 const MonthlyData: FunctionComponent<Props> = ({ posts, selectedMonth }: Props): JSX.Element => {
 
     const monthlyPosts = totalPostsByMonth(posts, selectedMonth)
+    const longestPost = longestPostOfMonth(monthlyPosts)
+    const formatTime = (time: moment.MomentInput) => {
+        return moment(time).format('MMMM DD, YYYY HH:mm:ss')
+    }
+
     if (monthlyPosts.length > 0) {
         return (
-            <ListGroup>
-                <ListGroup.Item variant="success">Average character length of posts per month &nbsp;
+            <div className="monthly-wrap">
+                <p className="monthly-data">Average character length of posts per month: &nbsp;
                     <strong>{avgPostLength(monthlyPosts)}</strong>
-                </ListGroup.Item>
-                <ListGroup.Item variant="info">Average number of posts per user per month &nbsp;
+                </p>
+                <p className="monthly-data">Average number of posts per user per month: &nbsp;
                     <strong>{avePostPerUserPerMonth(monthlyPosts)}</strong>
-                </ListGroup.Item>
-                <Accordion>
-                    <Accordion.Item eventKey="0">
-                        <Accordion.Header>Longest post by character length &nbsp;
-                            <strong>{longestPostOfMonth(monthlyPosts).message.length}</strong>
-                        </Accordion.Header>
-                        <Accordion.Body>
-                            {longestPostOfMonth(monthlyPosts).message}
-                        </Accordion.Body>
-                    </Accordion.Item>
-                </Accordion>
-            </ListGroup>
+                </p>
+                <p className="monthly-data">Longest post by character length: &nbsp;
+                    <strong>{longestPost.message.length}</strong> characters
+                </p>
+                <div className="longestPost-time">{formatTime(longestPost.created_time)} by {longestPost.from_name}</div>
+                <div className="longestPost-message">{longestPost.message}</div>
+            </div>
         )
     } else {
         return (<h6>No data</h6>)

@@ -1,0 +1,16 @@
+.monthly-wrap {
+  margin-top: 20px;
+}
+.monthly-data {
+  text-align: left;
+}
+.longestPost-time {
+  border-bottom: 1px solid lightgray;
+  padding: 5px 0;
+  font-weight: 500;
+  text-align: left;
+}
+.longestPost-message {
+  padding: 10px 0;
+  text-align: left;
+}
