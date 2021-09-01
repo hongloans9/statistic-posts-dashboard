@@ -54,6 +54,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ![dashboard](https://user-images.githubusercontent.com/16826885/131747789-0b4d412a-fb00-4b24-a86b-7b44abad820b.PNG)
 ---
+![monthlyData](https://user-images.githubusercontent.com/16826885/131753326-833d8b56-c075-4c9e-b93e-e899676baebf.PNG)
+---
 ![postList](https://user-images.githubusercontent.com/16826885/131747976-61a4cb91-3240-4722-9553-82b3d7391598.PNG)
 ---
 
