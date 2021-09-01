@@ -1,44 +1,52 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+## Structure of the application:
+
+-Login page (default): /
+
+-Dashboard: /statistics
+
+-Posts list page: /posts
+
+## Features
+
+-Login page with a button to request token to fetch data, then navigate to Dashboard.
+
+-Simple header to navigate between pages.
+
+-Dashboard shows the sidebar on the left and the table of total posts slit by week number by default. Sidebar includes a list of months (Jan to Dec) where can be selected to show:
+  * Average character length of posts per month
+  * Average number of posts per user per month
+  * Longest posts by character length per month
+
+-Post list that shows users list with user name and post count ordered by name alphabetically on the left side, and all posts on the right side by default.
+
+-When a user name is clicked, that user's posts will be shown in the post list view.
+
+-Post list where posts are ordered by creation time.
+
+-Arrow buttons to allow choosing most recent first and most recent last ordering for posts list
+
+-User name items, Arrow buttons and Months have active state when it's clicked.
+
+## Further development
+
+-Search input to search for users.
+
+-Search input to search for posts.
+
+-Url with parameter can be accessed directly (deep-linkable post list)
+
 ## Available Scripts
 
-In the project directory, you can run:
+- `git clone https://github.com/hongloans9/statistic-posts-dashboard`
+- `cd statistic-posts-dashboard`
+- `npm install`
+- `npm start`
+- Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm start`
+### Other available Scripts
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- `npm test`
+- `npm run build`
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
