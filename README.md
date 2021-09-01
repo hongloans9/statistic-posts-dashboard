@@ -37,7 +37,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 -Url with parameter can be accessed directly (deep-linkable post list)
 
-## Available Scripts
+## Running application
 
 - `git clone https://github.com/hongloans9/statistic-posts-dashboard`
 - `cd statistic-posts-dashboard`
