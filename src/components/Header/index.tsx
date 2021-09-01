@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import "./index.css";
 
 const Header = () => {
+    if (window.location.pathname === '/login') return null;
     return (
         <Container className="header">
             <Link className="nav-link" to='/statistics'>

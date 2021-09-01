@@ -10,7 +10,7 @@ import './dashboard.css'
 
 const Dashboard = () => {
   const [posts, setposts] = useState<Post[]>([]);
-  const [selectedMonth, setSelectedMonth] = useState<number>(0);
+  const [selectedMonth, setSelectedMonth] = useState<number>(-1);
   const [viewOverview, setViewOverview] = useState<boolean>(true);
   const dispatch = useDispatch()
   const token = localStorage.getItem('token');

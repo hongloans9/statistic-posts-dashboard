@@ -3,10 +3,10 @@
   justify-content: flex-end;
 }
 .nav-link {
-  color: darkcyan;
+  color: darkcyan !important;
   font-weight: 500;
 }
 .nav-link:hover {
-  color: darkcyan;
+  color: darkcyan !important;
   text-decoration: underline;
 }

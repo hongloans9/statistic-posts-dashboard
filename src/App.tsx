@@ -14,12 +14,11 @@ function App() {
       <Suspense fallback={<Spinner animation="border" variant="success" />}>
         <BrowserRouter>
           <Header />
-
           <Switch>
-            <Route exact path="/" component={login} />
+            <Route exact path="/login" component={login} />
             <Route path="/statistics" component={dashboard} />
             <Route path="/posts" component={usersPosts} />
-            <Redirect from="*" to={"/"} />
+            <Redirect from="*" to={"/login"} />
           </Switch>
         </BrowserRouter>
       </Suspense>
