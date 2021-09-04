@@ -1,6 +1,5 @@
 import moment from "moment";
 import { FunctionComponent } from "react";
-import { Accordion, ListGroup } from "react-bootstrap";
 import { Post } from "../../features/dashboard/postsSlice";
 import { avePostPerUserPerMonth } from "../../features/dashboard/utils/averagePost-user-month";
 import { avgPostLength } from "../../features/dashboard/utils/averagePostLength";
@@ -21,7 +20,7 @@ const MonthlyData: FunctionComponent<Props> = ({ posts, selectedMonth }: Props):
         return moment(time).format('MMMM DD, YYYY HH:mm:ss')
     }
 
-    if (monthlyPosts.length > 0) {
+    if (monthlyPosts.length > 0 && longestPost) {
         return (
             <div className="monthly-wrap">
                 <p className="monthly-data">Average character length of posts per month: &nbsp;
@@ -31,10 +30,10 @@ const MonthlyData: FunctionComponent<Props> = ({ posts, selectedMonth }: Props):
                     <strong>{avePostPerUserPerMonth(monthlyPosts)}</strong>
                 </p>
                 <p className="monthly-data">Longest post by character length: &nbsp;
-                    <strong>{longestPost.message.length}</strong> characters
+                    <strong>{longestPost!.message.length}</strong> characters
                 </p>
-                <div className="longestPost-time">{formatTime(longestPost.created_time)} by {longestPost.from_name}</div>
-                <div className="longestPost-message">{longestPost.message}</div>
+                <div className="longestPost-time">{formatTime(longestPost!.created_time)} by {longestPost!.from_name}</div>
+                <div className="longestPost-message">{longestPost!.message}</div>
             </div>
         )
     } else {

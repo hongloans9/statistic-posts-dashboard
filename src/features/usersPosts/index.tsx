@@ -39,6 +39,7 @@ const UsersPosts = () => {
 
   useEffect(() => {
     const data = postsByUser(posts, selectedUser)
+    setActive('ASC');
     setFilterPosts(data)
   }, [selectedUser])
 

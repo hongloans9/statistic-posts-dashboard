@@ -10,7 +10,7 @@ import './dashboard.css'
 
 const Dashboard = () => {
   const [posts, setposts] = useState<Post[]>([]);
-  const [selectedMonth, setSelectedMonth] = useState<number>(-1);
+  const [selectedMonth, setSelectedMonth] = useState<number>();
   const [viewOverview, setViewOverview] = useState<boolean>(true);
   const dispatch = useDispatch()
   const token = localStorage.getItem('token');
@@ -44,7 +44,7 @@ const Dashboard = () => {
           </div>
         </Col>
         <Col sm={8}>
-          {viewOverview ? <TableWeekData /> : <MonthlyData posts={posts} selectedMonth={selectedMonth} />}
+          {viewOverview ? <TableWeekData /> : <MonthlyData posts={posts} selectedMonth={selectedMonth!} />}
         </Col>
       </Row>
     </Container>
