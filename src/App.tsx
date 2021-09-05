@@ -16,8 +16,8 @@ function App() {
           <Header />
           <Switch>
             <Route exact path="/login" component={login} />
-            <Route path="/statistics" component={dashboard} />
-            <Route path="/posts" component={usersPosts} />
+            <PrivateRoute path="/statistics" component={dashboard} />
+            <PrivateRoute path="/posts" component={usersPosts} />
             <Redirect from="*" to={"/login"} />
           </Switch>
         </BrowserRouter>
@@ -25,5 +25,18 @@ function App() {
     </div>
   );
 }
+
+const PrivateRoute = ({ component, ...rest }: any) => {
+  const token = localStorage.getItem("token")
+
+  const routeComponent = (props: any) =>
+    token ? (
+      React.createElement(component, props)
+    ) : (
+      <Redirect to={{ pathname: "/login" }} />
+    )
+  return <Route {...rest} render={routeComponent} />
+}
+
 
 export default App;

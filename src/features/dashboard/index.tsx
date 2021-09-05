@@ -33,7 +33,7 @@ const Dashboard = () => {
         <h1>Statistics Dashboard</h1>
         <Col sm={4}>
           <div className="sidebar-wrap">
-            <h4 className="overview" onClick={() => setViewOverview(true)}>Overview</h4>
+            <h4 className="overview" onClick={() => { setViewOverview(true); setSelectedMonth(undefined) }}>Overview</h4>
             <h4>Monthly</h4>
             <div className="month-wrap">
               {monthNames.map((month, index) =>

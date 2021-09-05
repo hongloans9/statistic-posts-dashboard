@@ -32,6 +32,7 @@ export const fetchPosts = async (token: string, page: number) => {
     return data.posts;
   } catch (err) {
     console.error(err);
+    if ((err.message = "Invalid SL Token")) localStorage.removeItem("token");
     return [];
   }
 };

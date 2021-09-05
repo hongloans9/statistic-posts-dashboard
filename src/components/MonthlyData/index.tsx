@@ -12,7 +12,7 @@ interface Props {
     selectedMonth: number
 }
 
-const MonthlyData: FunctionComponent<Props> = ({ posts, selectedMonth }: Props): JSX.Element => {
+const MonthlyData: FunctionComponent<Props> = ({ posts, selectedMonth }: Props) => {
 
     const monthlyPosts = totalPostsByMonth(posts, selectedMonth)
     const longestPost = longestPostOfMonth(monthlyPosts)

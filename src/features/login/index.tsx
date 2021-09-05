@@ -7,18 +7,17 @@ const Login = () => {
   let history = useHistory();
 
   const register = () => {
-      getToken().then(data => {
-        console.log(data)
-        localStorage.setItem("token", data)
-        history.push("/statistics")
-      })
+    getToken().then(data => {
+      localStorage.setItem("token", data)
+      history.push("/statistics")
+    })
   }
 
   return (
     <Container>
-        <Button className="login-button" variant="success" onClick={register}>
-          Go to dashboard
-        </Button>
+      <Button className="login-button" variant="success" onClick={register}>
+        Go to dashboard
+      </Button>
     </Container>
   )
 }
