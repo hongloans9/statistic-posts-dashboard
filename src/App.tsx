@@ -28,12 +28,14 @@ function App() {
 
 const PrivateRoute = ({ component, ...rest }: any) => {
   const token = localStorage.getItem("token")
-
+  // check if user is logged in
+  // If yes, show route
+  // Otherwise, redirect to login page
   const routeComponent = (props: any) =>
     token ? (
       React.createElement(component, props)
     ) : (
-      <Redirect to={{ pathname: "/login" }} />
+      <Redirect to="/login" />
     )
   return <Route {...rest} render={routeComponent} />
 }

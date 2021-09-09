@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { IoArrowDownCircleSharp, IoArrowUpCircleSharp } from "react-icons/io5";
@@ -47,13 +48,14 @@ const UsersPosts = () => {
     <Container>
       <Row>
         <Col md={4}>
-
           <UsersList />
         </Col>
         <Col md={8}>
           <div className="sort-icon">
-            <span className={`${active === 'ASC' && 'active'}`} onClick={() => clickSort("ASC")}><IoArrowUpCircleSharp /></span>
-            <span className={`${active === 'DESC' && 'active'}`} onClick={() => clickSort("DESC")}><IoArrowDownCircleSharp /></span>
+            <span className={`${active === 'ASC' && 'active'}`}
+              onClick={() => clickSort("ASC")}><IoArrowUpCircleSharp /></span>
+            <span className={`${active === 'DESC' && 'active'}`}
+              onClick={() => clickSort("DESC")}><IoArrowDownCircleSharp /></span>
           </div>
           <PostsList posts={filterPosts} />
         </Col>

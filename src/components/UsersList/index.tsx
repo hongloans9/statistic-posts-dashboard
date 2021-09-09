@@ -10,7 +10,9 @@ const UsersList = () => {
     return (
         <div className="user-list">
             {users.map((user: User) =>
-                <div key={user.id} className={`user-item ${selectedUser === user.id && 'selected'}`} onClick={() => dispatch(setSelectedUser(user.id))}>
+                <div key={user.id}
+                    className={`user-item ${selectedUser === user.id && 'selected'}`}
+                    onClick={() => dispatch(setSelectedUser(user.id))}>
                     {user.name}
                     <span className="posts-number">{user.totalPosts}</span>
                 </div>
